@@ -60,9 +60,16 @@ namespace WebApi.AddControllers
         [HttpGet("{id}")]
          public IActionResult GetByID(int id)
         {
-            GetBooksByIdQuery query = new GetBooksByIdQuery(_context);
-            var result = query.Handle(id);
-            // var book = _context.Books.Where(book=> book.Id == id).SingleOrDefault();
+            BooksByIdViewModel result;
+            try{
+                 GetBooksByIdQuery query = new GetBooksByIdQuery(_context);
+                    query.BookId = id;
+                    result = query.Handle();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
             return Ok(result);
         }
 

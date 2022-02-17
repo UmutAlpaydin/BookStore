@@ -9,19 +9,27 @@ namespace WebApi.BookOperations.GetBooksById
     public class GetBooksByIdQuery
     {
         private readonly BookStoreDbContext _dbContext;
+        public int BookId { get; set; }
         public GetBooksByIdQuery(BookStoreDbContext dbContext)
         {
             _dbContext = dbContext;
         }
 
-        public Book Handle(int id)
+        public BooksByIdViewModel Handle()
         {
-            var book = _dbContext.Books.Where(book=> book.Id == id).SingleOrDefault();
-            return book;
+            var book = _dbContext.Books.Where(book=> book.Id == BookId).SingleOrDefault();
+            if(book is null)
+                throw new InvalidOperationException("Kitap Bulunamadi");
+
+            BooksByIdViewModel vm = new BooksByIdViewModel();
+            vm.Title = book.Title;
+            vm.PageCount = book.PageCount;
+            vm.PublishDate = book.PublishDate.Date.ToString("dd/MM/yyyy");
+            return vm;
         }
     }
 
-    public class BooksViewModel
+    public class BooksByIdViewModel
     {
         public string Title { get; set; }
 
