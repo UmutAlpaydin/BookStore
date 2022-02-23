@@ -10,11 +10,11 @@ namespace WebApi.Application.BookOperations.Queries.GetBooksById
 {
     public class GetBooksByIdQuery
     {
-        private readonly BookStoreDbContext _dbContext;
+        private readonly IBookStoreDbContext _dbContext;
 
         private readonly IMapper _mapper;
         public int BookId { get; set; }
-        public GetBooksByIdQuery(BookStoreDbContext dbContext, IMapper mapper)
+        public GetBooksByIdQuery(IBookStoreDbContext dbContext, IMapper mapper)
         {
             _dbContext = dbContext;
             _mapper = mapper;
@@ -22,7 +22,7 @@ namespace WebApi.Application.BookOperations.Queries.GetBooksById
 
         public BooksByIdViewModel Handle()
         {
-            var book = _dbContext.Books.Include(x=> x.Author).Include(x=> x.Genre).Where(book=> book.Id == BookId).SingleOrDefault();
+            var book = _dbContext.Books.Include(x=> x.Genre).Include(x=> x.Author).Where(book=> book.Id == BookId).SingleOrDefault();
             if(book is null)
                 throw new InvalidOperationException("Kitap Bulunamadi");
 

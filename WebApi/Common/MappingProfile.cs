@@ -23,7 +23,7 @@ namespace WebApi.Common
             .ForMember(dest=> dest.Genre, opt=>opt.MapFrom(src=> src.Genre.Name))
             .ForMember(dest=> dest.Author, opt=>opt.MapFrom(src=> src.Author.Name + " " + src.Author.Surname));
 
-            CreateMap<CreateAuthorModel, Author>();
+            // CreateMap<CreateAuthorModel, Author>();
             CreateMap<Author, AuthorsViewModel>();
             CreateMap<Author, AuthorDetailViewModel>();
 

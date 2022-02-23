@@ -11,10 +11,10 @@ namespace WebApi.Application.AuthorOperations.Queries.GetAuthors
 {
     public class GetAuthorsQuery
     {
-        private readonly BookStoreDbContext _context;
+        private readonly IBookStoreDbContext _context;
 
         private readonly IMapper _mapper;
-        public GetAuthorsQuery(IMapper mapper, BookStoreDbContext context)
+        public GetAuthorsQuery(IMapper mapper, IBookStoreDbContext context)
         {
 
             _mapper = mapper;
@@ -31,6 +31,7 @@ namespace WebApi.Application.AuthorOperations.Queries.GetAuthors
 
     public class AuthorsViewModel
     {
+        public int Id { get; set; }
         public string Name { get; set; }
 
         public string Surname { get; set; }

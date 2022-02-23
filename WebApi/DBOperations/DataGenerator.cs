@@ -27,6 +27,11 @@ namespace WebApi.DBOperations
                         Name = "Test",
                         Surname = "TestName",
                         BirthDate =  new System.DateTime(1962,08,12)
+                    },
+                     new Author{
+                        Name = "Name",
+                        Surname = "Surname",
+                        BirthDate =  new System.DateTime(1942,10,22)
                     }
                 );
 
@@ -46,7 +51,8 @@ namespace WebApi.DBOperations
                 new Book{
                    
                     Title = "Lean Startup",
-                    GenreId = 1, //PersonalGrowth
+                    GenreId = 1,
+                    AuthorId = 1, //PersonalGrowth
                     PageCount = 200,
                     PublishDate = new System.DateTime(2001,06,12)
                 },
@@ -54,6 +60,7 @@ namespace WebApi.DBOperations
                    
                     Title = "Herland",
                     GenreId = 2, //ScienceFiction
+                    AuthorId = 2, 
                     PageCount = 250,
                     PublishDate = new System.DateTime(2010,05,23)
                 },
@@ -61,6 +68,7 @@ namespace WebApi.DBOperations
         
                     Title = "Dune",
                     GenreId = 2, //ScienceFiction
+                    AuthorId = 3, 
                     PageCount = 540,
                     PublishDate = new System.DateTime(2002,05,23)
                 } 

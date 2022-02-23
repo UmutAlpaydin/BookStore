@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\90538\\dotnetprojects\\BookStore\\WebApi\\WebApi.csproj": {}
+    "c:\\Users\\90538\\dotnetprojects\\BookStore\\WebApi\\WebApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\90538\\dotnetprojects\\BookStore\\WebApi\\WebApi.csproj": {
+    "c:\\Users\\90538\\dotnetprojects\\BookStore\\WebApi\\WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\90538\\dotnetprojects\\BookStore\\WebApi\\WebApi.csproj",
+        "projectUniqueName": "c:\\Users\\90538\\dotnetprojects\\BookStore\\WebApi\\WebApi.csproj",
         "projectName": "WebApi",
-        "projectPath": "C:\\Users\\90538\\dotnetprojects\\BookStore\\WebApi\\WebApi.csproj",
+        "projectPath": "c:\\Users\\90538\\dotnetprojects\\BookStore\\WebApi\\WebApi.csproj",
         "packagesPath": "C:\\Users\\90538\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\90538\\dotnetprojects\\BookStore\\WebApi\\obj\\",
+        "outputPath": "c:\\Users\\90538\\dotnetprojects\\BookStore\\WebApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
